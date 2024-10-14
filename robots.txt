@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /Impressum.html
+Disallow: /datenschutz.html
+
+Sitemap: https://paradise.de/sitemap.xml

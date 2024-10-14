@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>https://paradise.de/</loc>
+  <lastmod>2024-06-03T10:11:18+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://paradise.de/ueber_uns.html</loc>
+  <lastmod>2024-06-03T10:11:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+ <loc>https://paradise.de/eis.html</loc>
+  <lastmod>2024-06-03T10:11:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+ <loc>https://paradise.de/smoothie.html</loc>
+  <lastmod>2024-06-03T10:11:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+ <loc>https://paradise.de/milkshake.html</loc>
+  <lastmod>2024-06-03T10:11:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://paradise.de/fruehstueck_snacks.html</loc>
+  <lastmod>2024-06-03T10:11:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://paradise.de/Kontak.html</loc>
+  <lastmod>2024-06-03T10:11:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://paradise.de/datenschutz/</loc>
+  <lastmod>2024-06-03T10:11:18+00:00</lastmod>
+  <priority>0.00</priority>
+</url>
+<url>
+  <loc>https://paradise.de/Impressum/</loc>
+  <lastmod>2024-06-03T10:11:18+00:00</lastmod>
+  <priority>0.00</priority>
+</url>
+</urlset>

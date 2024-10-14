@@ -1,0 +1,1473 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+img{
+	max-width: 100%;
+}
+html{
+	font: 1rem Montserrat;
+	scroll-behavior: smooth;
+}
+@font-face {
+  font-display: swap; 
+  font-family: Montserrat;
+  src: url('../fonts/Montserrat-VariableFont_wght.ttf') format('truetype'); 
+}
+@font-face {
+	  font-display: swap; 
+	  font-family: Pacifico-Regular;
+	  src: url('../fonts/Pacifico-Regular.ttf') format('truetype'); 
+}
+:root{
+	--sec_color: #ED6F8E;
+	--pri_color: #f296ad;
+	--offWhite: #EFEFEF;
+}
+
+/* Handy Version - Small Version - ≥576px */
+
+/************************Open / close Button***************************/
+.button{
+	position: fixed;
+	right:0;
+	top:0; 
+	margin: 4%;
+	z-index: 100; /*Button siempre esta en la capa de delante*/
+}
+/*klasse für den Burgen button darstellen-----*/
+.burger-icon{
+	background: transparent;
+	border: none;
+	width: 30px;
+	height: 30px;
+	position: relative;
+}
+.burger-icon span{ 
+	display: block;
+	width: 30px;
+	height: 5px;
+	background: white;
+	position: absolute;
+	border-radius: 5px;
+	padding: 5% 2%;
+}
+.burger-icon span:nth-child(1){
+	top:0;
+}
+.burger-icon span:nth-child(2){
+	top:11px;
+}
+.burger-icon span:nth-child(3){
+	top:22px;
+}
+/*klasse für den schilißen Button darzustellen / ANIMATION -------*/
+.closed span{
+	animation-fill-mode: forwards;
+}
+.closed span:nth-child(1) {
+	animation: aligment1 0.5s forwards, drehen1 0.5s 0.5s forwards;
+}
+.closed span:nth-child(3) {
+	 animation: aligment3 0.5s forwards, drehen3 0.5s 0.5s forwards;
+}
+.closed span:nth-child(2){
+	animation: disapear 0.5s forwards;
+}
+@keyframes aligment1 {
+	from {
+		top:0;
+	}
+	to {
+		top:11px;
+	}
+}
+
+@keyframes aligment3 {
+	from {
+		top:22px;
+	}
+	to {
+		top:11px;
+	}
+}
+@keyframes disapear{
+	from{
+		opacity: 0.5;
+	}
+	to{
+		opacity: 0;
+	}
+}
+@keyframes drehen1{
+	from{
+		transform: rotate(0);
+	}
+	to{
+		transform: rotate(45deg);
+	}
+}
+@keyframes drehen3{
+	from{
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(135deg);
+	}
+}
+/*-------------------------Menü--------------------------*/
+nav{
+	background-color: var(--pri_color);
+	position: fixed;
+	right: 0;
+	top:0;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	z-index: 99;
+}
+/*ul / li / a / Button Tag von MAIN MENU Darstellung--------*/
+
+#topnav ul{
+	list-style-type: none;
+	text-align: center;
+}
+.menu{width: 100%;}
+.menu button{
+	border: initial;
+	background-color: initial;
+	padding: 0;
+	border-radius: initial;
+}
+.menu li{
+	flex: 1 1 100%;
+	border-bottom: 2px solid rgba(255,255,255,0.7);	
+}
+.menu a, .menu button{
+	width: 100%;
+	color: var(--offWhite);
+	text-decoration: none;
+	padding: 20px;
+	display: block;
+	font: 400 2rem Montserrat;
+}
+#topnav{ /*Main Menu verstecken*/
+	display: none;
+}
+/*------SubMenu Darstellung--------*/
+
+.dropdown_inhalt li{
+	padding: 2%;
+	border-bottom: none;
+}
+.dropdown_inhalt a{
+	background-color: rgba(255,255,255,0.15);
+	font: 200 2rem Montserrat;
+}
+.dropdown_inhalt{ /*SubMenu verstecken*/
+	margin-top: 5%;
+	display: none;
+}
+/*--------index Seite----------*/
+/*----------------------------Headerpict-------------------------------*/
+.hero-image {
+	background-image: url("../img/small/fruits5_hero_handy.webp");
+	background-size: cover;
+	background-position: center center;
+	/*background-attachment: fixed; no supported by iphone*/
+	height: 70vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.glass{
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 200px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	padding: 20px;
+	width: 250px;
+	height: 250px;
+	/*folgendes für Logo Zentrieren*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*----------------------------MAIN-------------------------------------*/
+
+/*allgemine Klassen*/
+.wrapp80{
+	padding: 5% 0 10%;
+	max-width: 80%;
+	margin: 0 auto;
+}
+.txtWhite{color: white;}
+.txtcenter{text-align: center;}
+.bgPri{background-color: var(--pri_color);}
+.stdTxtW{
+	padding: 5% 0;
+	color: white;
+	font: 400 1.1rem Montserrat;
+}
+.stdTxtB{
+	padding: 5% 0;
+	color: black;
+	font: 400 1.1rem Montserrat;
+	text-decoration: none;
+}
+.intLink{
+	display: inline-block;
+	padding: 5%;
+	border: 2px solid black;
+	min-width: 150px;
+}
+.intLink a{font: 500 1.1rem Montserrat;}
+.onlylarge{display:none;}
+.twoCol50_50{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+.twoCol50_50 div{ flex: 0 1 100%; }
+/*Selektoren-----------------------*/
+
+h1{
+	font-family: Pacifico-Regular;
+	font-size: 2.2rem;
+	color: white;
+	padding: 8% 0 3%;
+	letter-spacing: 0.1rem;
+}
+h2{
+	font-family: Pacifico-Regular;
+	font-size: 2rem;
+	margin: 8% 0 3%;
+}
+strong{
+	color: var(--sec_color);
+	font: 600 1rem Montserrat;
+}
+/*------pictures--------- !!!!!!!!!!!!*/
+picture{
+	background-size: cover;
+	background-position: center center;
+	/*background-attachment: fixed; no supported by iphone - ab 720px aktivieren*/
+}
+
+/*-------------SEITE ÜBER UNS-------------------------*/
+.uns h2{
+	font: 500 2rem Montserrat;
+	padding: 5%;
+	background-color: whitesmoke;
+}
+.uns strong{
+	color: black;
+}
+.pacifico{
+	font-family: Pacifico-Regular;
+	font-size: 2rem;
+	margin: 2% 0;
+}
+#pict_uns1{display: none;}
+/*-------------------SEITE KONTAKT-----------------------*/
+#bckgKontakt .burger-icon span{background-color: var(--sec_color) !important;}
+#bckgKontakt {
+	background-image: url('../img/small/kontakt_small.webp'); 
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 100vh;
+	background-attachment: fixed;
+	margin-top: 2%;
+}
+#bckgKontakt .burger-icon span{ background: #ED6F8E;}
+#kontakt div:first-of-type {
+	text-align: center;
+	background-color: rgba(255,255,255,0.8);
+	padding: 2%;
+	border-radius: 100px;
+	margin: 4% 2%;
+}
+#kontakt div:first-child p:first-of-type{
+	font: 800 2rem Montserrat;
+}
+#kontakt div:first-child p:last-of-type{
+	font: 500 1.2rem Montserrat;
+}
+.twoCol{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.twoCol div:first-child{flex: 0 1 100%;}
+.twoCol div:last-child{flex: 0 1 100%;}
+.wrapp70{
+	max-width: 90%;
+	margin: 6% auto;
+}
+.contact-form {
+	background-color: rgba(255,255,255,0.9);
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	width: 300px;
+}
+.contact-form h2 {
+	margin-top: 0;
+	margin-bottom: 5%;
+}
+.contact-form label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight:450;
+}
+.contact-form input, .contact-form textarea {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	box-sizing: border-box;
+}
+.contact-form textarea{height: 150px;}
+#checkbox { 
+    margin-right: 10px; 
+    flex-basis: 5%;
+}
+.checkbox-wrapp {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.contact-form button {
+	width: 100%;
+	padding: 10px;
+	background-color: #28a745;
+	border: none;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 16px;
+	cursor: pointer;
+	margin-top: 5%;
+}
+.contact-form button:hover {background-color: #218838;}
+
+/*------Datenschutzerklärung:*/
+
+#lightbox {
+	display: none;
+	position: relative;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.7); 
+	z-index: 9999;
+	padding: 20px;
+	box-sizing: border-box;
+}
+#lightbox-content {
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 5px;
+	max-width: 550px;
+	margin: 20% auto;
+	text-align: justify;
+	max-height: 700px;
+	overflow-y: scroll; 
+    overflow-x: hidden;
+}
+#close-lightbox {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	color: #fff;
+	font-size: 5rem;
+}
+#lightbox-content strong{
+	color:black;
+}
+
+/*--------IMPRESSUM SEITE-----------*/
+#impseite .burger-icon span{background-color: var(--sec_color)!important;}
+#impressum {
+	padding: 3% 5%;
+	max-width: 90%;
+}
+#impr_h1{
+	font: 800 1.3rem Montserrat;
+	margin: 5% 0 2% ;
+	color:black;
+}
+#impressum h2{
+	font: 500 1.2rem Montserrat;
+	margin: 0;
+	margin-top: 2% ;
+}
+/*-----------Datenschuzt seite -------------*/
+	#Dataprotc .burger-icon span {
+    	background-color: var(--sec_color) !important;
+	}
+
+	#Datenschutz{
+		padding: 3% 10%;
+		max-width: 90%;
+	}
+	#Datenschutz h1{
+		font: 800 1.3rem Montserrat;
+		margin: 5% 0 2% ;
+		color: black;
+	}
+	#Datenschutz h2{
+		font: 500 1.25rem Montserrat;
+		margin: 2% 0 2%;
+	}
+	#Datenschutz h3{
+		color: black;
+		font: 500 1.15rem Montserrat;
+		margin: 0.5% 0;
+		position: relative;
+		text-align: left;
+	}
+	#Datenschutz h4{
+		font: 550 1rem Montserrat;
+		margin:0;
+		padding: 1rem 0 1rem
+	}
+	#Datenschutz p{
+		font: 400 1rem Montserrat;
+		padding: 0.5rem 0;
+	}
+	#Datenschutz a{
+		word-break: break-all; /* Rompe las palabras largas */
+    	word-wrap: break-word;
+	}
+	#Datenschutz ul{
+		margin: inherit;
+		padding: inherit;
+	}
+	#Datenschutz li{
+		margin: inherit;
+		padding: inherit;
+		padding-bottom: 0.5rem;
+	}
+/*----------------EIS SEITE---------------------*/
+	
+/* section hero--------------*/
+	#eis section:first-of-type{
+		max-height: 100vh;
+		display: flex;
+        justify-content: center;
+        align-items: center;
+		margin-top: 0px;
+		position: relative;
+	}
+	#eis .hero-image {
+	background-image: url("../img/small/eis_hero_small.webp"); 
+	}
+	#eisintro{
+		position:absolute;
+		top: 40%; 
+		left: 50%;
+		transform: translate(-50%, -40%);
+	}
+	#eis h1{
+		font: 800 4rem Montserrat; 
+		text-transform: uppercase;
+		color:black; 
+	}
+	#slogan{
+		font: 500 2rem Montserrat; 
+		position: relative;
+		margin-top: 40%;
+		color:black; 
+	}
+
+/*sections products------------*/
+	.section {
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+     }
+	.section img{ 
+		width: 100%;
+        height: 100vh;
+		object-fit: cover;
+		object-position: center;
+		position:absolute; 
+		bottom: 0;
+		left: 0;
+		z-index: 0;
+	}
+	.eisinfo h2{
+		color:white;
+		font-size: 3rem; 
+	}
+	#eis .eisinfo p{display: none;}
+	.eisinfo{
+		max-width: 90%;
+		position: absolute;
+		top: 8%;
+		left: 20%;
+		transform: translate(-20% , -8%);
+		z-index: 1;
+	}
+	.Kirschenliebe{
+		background: -webkit-radial-gradient(center, ellipse cover, rgba(207,39,95,1) 0%, rgba(207,0,68,1) 100%);
+	}
+	.Zitronenfrische{
+		background: -webkit-radial-gradient(center, ellipse cover, rgba(255,218,118,1) 0%, rgba(255,205,41,1) 100%);
+	}
+	
+	.Blaubeertraum{
+		background: -webkit-radial-gradient(center, ellipse cover, rgba(181,67,147,1) 0%, rgba(161,0,115,1) 100%);
+	}
+	.Pistazienfreude{
+		background: -webkit-radial-gradient(center, ellipse cover, rgba(147,197,114,1) 0%, rgba(98,166,53,1) 100%);
+	}
+	.Erdbeerzauber{
+		background: -webkit-radial-gradient(center, ellipse cover, rgba(240,124,126,1) 0%, rgba(247,62,62,1) 100%);
+	}
+	.Mandelknusper{
+		background: -webkit-radial-gradient(center, ellipse cover, rgba(236,211,193,1) 0%, rgba(214,158,126,1) 100%);
+	}
+	.Zitronenfrische h2, .Pistazienfreude h2, .Mandelknusper h2{color:black;} 	
+
+#eis #cont-footer{
+	min-height: 20vh;
+	background-color: var(--pri_color);
+	display: flex;
+	flex-direction: column;
+	padding: 12%;
+	justify-content: normal;
+	align-items: stretch;
+	position: static;
+}
+
+
+/*-------------------Smoothie Seite-------------------*/
+	#smothie section:first-of-type{
+		max-height: 100vh;
+		display: flex;
+        justify-content: center;
+        align-items: center;
+		margin-top: 0px;
+		position: relative;
+	}
+	#smoothie .hero-image {
+	background-image: url("../img/small/smoothie_intro_small.webp"); 
+	}
+	#eisintro{
+		position:absolute;
+		top: 40%; 
+		left: 50%;
+		transform: translate(-50%, -40%);
+	}
+	#smoothie h1{
+		font: 800 4rem Montserrat; 
+		text-transform: uppercase;
+		color:white; 
+	}
+	#smoothie #slogan{
+		font: 500 2rem Montserrat; 
+		position: relative;
+		margin-top: 40%;
+		color:white; 
+	}
+	#smoothie .eisinfo p{display: none;}
+	
+	
+#smoothie #cont-footer{
+	min-height: 20vh;
+	background-color: var(--pri_color);
+	display: flex;
+	flex-direction: column;
+	padding: 12%;
+	justify-content: normal;
+	align-items: stretch;
+	position: static;
+}
+/*-----------------SNACK SEITE-----------------*/
+.introsnacks{
+	background-color: white;
+	padding: 2%;
+}
+.introsnacks h1{
+	font-family: Pacifico-Regular;
+	font-size: 2.2rem;
+	color: black;
+	text-align: center;
+}
+.lightbox {
+		background: rgba(0,0,0,0.79);
+		color: white;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		z-index: 1;
+	}
+.lightbox img {
+	max-width: 800px;
+}
+.container > div{overflow: hidden;}
+.container img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr;  
+    grid-template-rows: repeat(22, 50vh);
+    gap: 2px;
+}
+
+/*********************Footer*************************/
+
+#cont-footer{
+	min-height: 20vh;
+	background-color: var(--pri_color);
+	display: flex;
+	flex-direction: column;
+	padding: 12%;
+}
+#cont-footer div{
+	color: white;
+}
+#cont-footer h4{
+	margin-bottom: 3%;
+	font: 500 1.1rem Montserrat;
+}
+#infofoot > div{
+	margin-bottom: 8%;
+}
+#legal{
+	display: flex;
+	flex-direction: column;
+	margin-top: 2%;
+}
+#recht{
+	display: flex;
+	flex-direction: row;
+}
+#recht p, #recht a{
+	margin-right: 5%;
+	color: white;
+	text-decoration: none;
+}
+#copyr{
+	padding-top: 2%;
+	margin-bottom: 15%;
+}
+#socmed{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	max-width: 60%;
+	margin: 0 20%;
+}
+#socmed p{
+	color: white;
+	font: 500 1.3rem Montserrat;
+}
+#socmed p::after{
+	content: "";
+	display: block;
+	height: 0.15rem;
+	width: 100%;
+	background: white;
+	margin: 0.5rem 0;
+}
+#icons{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+#icons a{text-decoration: none;}
+#icons i{
+	display: block;
+	color: white;
+	font-size: 1.8rem;
+}
+
+@media (min-width:720px){
+/*----------Menu (tablet & Destop)---------------*/
+	.button{display: none;}
+	#topnav{display: block;} /*Main Menu anzeigen*/
+	nav{
+		position: relative;
+		height: auto;
+		z-index: 99;
+	}
+	.menu{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.menu li{
+		border-bottom: none;
+		flex-basis: 25%;
+		text-align: center;
+		background-color: transparent;
+	}
+	.menu a, .menu button{
+		font-size: 1.5rem;
+		border-right: 1px solid rgba(255,255,255,0.3);
+	}
+	.menu a:hover, .menu button:hover{
+		background-color: white;
+		color:var(--pri_color);
+	}
+	.dropdown{position: relative;}
+	.dropdown_inhalt{
+		background-color: var(--pri_color);
+		margin-top: 0;
+		width: 100%;
+		position: absolute;
+	}
+	.show {display: block;} /*Klasse für js*/
+	.dropdown_inhalt li {
+		background-color: var(--pri_color);
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+	.dropdown_inhalt a{
+		background-color: transparent;
+		width: 100%;
+		font-size: 1.5rem;
+		border-bottom: 1px solid rgba(255,255,255,0.3);
+	}
+	.dropdown_inhalt a:hover{
+		background-color: white;
+		color: var(--pri_color);
+	}
+	
+	/*Datenschutz*/
+	
+	#Datenschutz h1{
+		font: 800 2rem Montserrat;
+	}
+
+/*---------footer (Tablet & Destop)----------*/
+	#cont-footer{
+		padding: 5%;
+	}
+	#cont-footer h4{
+		font-size: 1.3rem;
+	}
+	#infofoot{
+		display: flex;
+		justify-content:space-between;
+	}
+	#infofoot p {
+		font-size: 1.1rem;
+	}
+	#footermedia{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	#legal{
+		flex-basis: 50%;
+	}
+	#recht p, #recht a{
+		font-size: 1.1rem;
+		margin-right: 10%;
+	}
+	#copyr{
+		margin-bottom: 0%;
+		font-size: 1.1rem;
+	}
+	#copyr br{display: none;}
+	#socmed{
+		flex-basis: 50%;
+		flex-direction: row;
+		justify-content: flex-end;
+		margin: 5% 0;
+		align-items: baseline;
+	}
+	#socmed p::after{
+		display: none;
+	}
+	#socmed p, #socmed i{
+		margin-left: 20px;
+	}
+	
+	#socmed i:hover{
+		-webkit-animation-name: fa-bounce;
+	  animation-name: fa-bounce;
+	  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+	  animation-delay: var(--fa-animation-delay, 0s);
+	  -webkit-animation-direction: var(--fa-animation-direction, normal);
+	  animation-direction: var(--fa-animation-direction, normal);
+	  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+	  animation-duration: var(--fa-animation-duration, 1s);
+	  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+	  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+	  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(.28, .84, .42, 1));
+	  animation-timing-function: var(--fa-animation-timing, cubic-bezier(.28, .84, .42, 1))
+	}
+}
+@media (min-width:720px) and (max-width:1280px){
+	/*----------header---------------*/
+	.hero-image {background-image: url("../img/medium/fruits5_hero_Tablet.webp");}
+	/*----------MAIN---------------*/
+	
+	h1{padding: 3% 0 0.5%;}
+	h2{
+		font-size: 1.5rem;
+		margin: 3% 0 2%;
+	}
+	strong{font-size: 1rem;}
+	.twoCol50_50{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: nowrap;
+	}
+	.twoCol50_50 div{
+		 flex: 0 1 50%;
+	}
+	.cont{overflow: hidden;}
+	.cont picture, .cont img{
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: 50% 12%;
+	}
+	 .cont .wrapp80 {
+		max-width: 40%;
+		padding: 10% 0;
+	}
+	.cont .stdTxtB{
+		padding: 2% 0;
+		font-size: 1rem;
+	}
+	.onlylarge{display:none;}
+	#intro .wrapp80{padding: 2%;}
+	#eis #kugeln{order:1;}
+	#milkshake div:nth-child(1){order:1;}
+	
+	/*-----------------SEITE ÜNER UNS--------------------------*/
+	.bgW{background-color: white;}
+	.hb{color:black;}
+	.uns .wrapp80{
+		max-width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 0;
+		padding:1% 0;
+	}
+	.uns h2{margin: 0;}
+	
+	#pict_uns1{
+		display: block;
+		width: 100%;
+		height: 45vh;
+		object-fit: cover;
+		object-position: bottom;
+	}
+	.threecol{
+		display: flex;
+		justify-content:space-between;
+		align-content: center;
+		gap: 3%;
+		margin: 0 4%;
+	}
+	.threecol div{flex: 0 1 33.333%;}
+	.threecol span{font-size: 1.5rem;}
+	.threecol img, .threecol picture{display: none;}
+	.threecol div:nth-child(2), .threecol div:nth-child(4){display: none;}
+	.threecol div{margin: 0 5%;}
+	#wifi div:first-child{order:2;}
+	#betrieb{display: none;}
+	.uns_cont picture, .uns_cont img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+	/*---------------SEITE KONTAKT--------------------------*/
+	#bckgKontakt {
+		background-image: url('../img/medium/kontakt_medium.webp'); 
+	}
+	#bckgKontakt nav{
+		position: fixed;
+		top:0;
+	}
+	#kontakt div:first-of-type {
+		text-align: center;
+		padding: 5% 3%;
+		border-radius: 100px;
+		margin: 5% 0;
+	}
+	#kontakt div:first-child p:first-of-type{font: 800 2.5rem Montserrat;}
+	#kontakt div:first-child p:last-of-type{font: 520 1.5rem Montserrat;}
+	.wrapp70{
+		max-width: 70%;
+		margin: 6% auto;
+	}
+	.contact-form h2 {font-size: 2.5rem;}
+	#lightbox-content {
+		max-width: 600px;
+		margin: 10% auto;
+	}
+	#lightbox-content p, #lightbox-content strong {font-size: 1.5rem;}
+	#lightbox-content {
+		background-color: #fff;
+		padding: 20px;
+		border-radius: 5px;
+		max-width: 600px;
+		margin: 10% auto;
+		text-align: justify;
+		max-height: 1000px;
+		overflow-y: scroll; 
+    	overflow-x: hidden;
+	}
+/*----------------Impressum Seite--------------------*/
+#impressum {
+	padding: 3% 10%;
+	max-width: 90%;
+	min-height: 80vh;
+	margin-bottom: 2%;
+}
+#impr_h1{
+	font: 800 1.8rem Montserrat;
+	margin: 5% 0 2% ;
+}
+#impressum h2{
+	font: 500 1.5rem Montserrat;
+	margin: 0;
+	margin-top: 2% ;
+}
+/*-------- DATENSCHUTZ SEITE--------------------*/
+	
+	#Datenschutz{max-width: 90%;}
+	#Datenschutz h1{font: 800 1.4rem Montserrat;}
+	#Datenschutz h2{font: 500 1.3rem Montserrat;}
+	#Datenschutz h3{font: 500 1.2rem Montserrat;}
+	#Datenschutz h4{font: 550 1.1rem Montserrat;}
+	#Datenschutz p{font: 400 1rem Montserrat;}
+/*-----------------EIS SEITE-----------------*/
+	/* section hero--------------*/
+	#eis section:first-of-type{margin-top: 0px;}
+	#eis .hero-image {
+	background-image: url("../img/large/eis_hero_large.webp");
+	}
+	#eisintro{
+		top: 30%;
+		transform: translate(-50%, -30%);
+	}
+	#eis h1{
+		font: 800 7rem Montserrat;
+		color:black;
+	}
+	#slogan{
+		color: black;
+		font: 500 3.5rem Montserrat;
+	}
+	#slogan::before {
+		content: "";  
+		display: block;
+		width: 10%; 
+		height: 5px; 
+		background-color: black; 
+		position: absolute;
+		top: 50%; 
+		transform: translateY(-50%); 
+		left: -10%; 
+	}
+	#slogan::after {
+		content: ""; 
+		display: block; 
+		width: 10%; 
+		height: 5px;
+		background-color: black;
+		position: absolute; 
+		top: 50%; 
+		transform: translateY(-50%); 
+		left: 100%; 
+	}
+
+	
+/*sections products------------*/
+	.eisinfo h2{font-size: 4rem;}
+	#eis .eisinfo p {
+		display: block;
+		margin-top: 2%;}
+	#eis .txtWhite{
+		font: 400 1.5rem Montserrat;
+	}
+	#eis .txtB{
+		color:black;
+		font: 400 1.5rem Montserrat;
+	}
+	.eisinfo{
+		max-width: 50%;
+		top: 85%;
+		left: 10%;
+		transform: translate(-10% , -85%);
+	}
+	
+	/*-------Footer-----------*/
+	#eis div:nth-child(1){
+		order: 0;
+	}
+	
+/*--------------SMOOTHIES SEITE----------------------*/
+	
+	#smoothie section:first-of-type{margin-top: 0px;}
+	#eisintro{
+		top: 30%;
+		transform: translate(-50%, -30%);
+	}
+	#smoothie h1{
+		font: 800 7rem Montserrat;
+		color:white;
+	}
+	#smoothie #slogan{
+		color: white;
+		font: 500 3.5rem Montserrat;
+	}
+	#smoothie #slogan::before {
+		background-color: white; 
+	}
+	#smoothie #slogan::after {
+		background-color: white;	
+	}
+	#smoothie .eisinfo{
+		background-color: rgba(0,0,0,0.60);
+		padding: 4% 4% 5%;
+		border-radius: 20px;
+	}
+	#smoothie .eisinfo p {
+		display: block;
+		margin-top: 4%;
+	}
+	#smoothie .txtWhite{
+		font: 400 1.5rem Montserrat;
+	}
+	#smoothie .txtB{
+		color:white;
+		font: 400 1.5rem Montserrat;
+	}
+	
+/*------------SNACKS SEITE---------*/
+	
+
+.introsnacks h1{
+	font-size: 3rem;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas por fila en tablet */
+    grid-template-rows: repeat(11, 50vh); /* 11 filas, ajusta según sea necesario */
+    gap: 2px;
+}
+}
+	
+
+@media (min-width:1281px){
+/*---------Menü------------*/
+	nav{
+		position: fixed;
+		width: 100%;
+		z-index: 100;
+	}
+	.menu a, .menu button{border-bottom: 1px solid rgba(255,255,255,0.3);}
+/*------------header---------------*/
+	.hero-image {
+		background-image: url("../img/large/fruits5_hero_large.webp");
+		background-attachment: fixed; 
+		height: 100vh;
+	}
+/*-----------MAIN------------------*/
+	h1{
+		padding: 0;
+		font-size: 4rem;
+	}
+	.stdTxtW {font-size: 2rem;}
+	.wrapp80{padding: 2% 4%;}
+	
+	.onlylarge{display:block;}
+	.parallax{
+		background-size: cover;
+		background-position: center center;
+		background-attachment: fixed; 
+		height: 80vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.n1{background-image: url("../img/large/hero-fruits.webp");}
+	.n2{
+		background-image: url("../img/large/parallax_eis_Home_large.webp");
+		height: 80vh;
+	}
+	
+	.cont img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+	#beginning h2{
+		font-size: 4rem; 
+		margin: 3% 0;
+	}
+	#beginning{display: block;}
+	#beginning div:first-of-type{display:none;}
+	.twoCol50_50{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: nowrap;
+	}
+	.twoCol50_50 div{
+		 flex: 0 1 50%;
+	}
+
+	.cont div:first-of-type{
+		height: 500px;
+		overflow: hidden;
+	}
+	.n3{
+		background-image: url("../img/large/hero_rosa_milk_large_Nero AI_Photo.webp");
+		height: 100vh;
+	}
+	#parallax_eis h3{
+		font: 700 7rem Montserrat;
+		color: black;
+		top: 50%;
+	}
+	#parallax_eis p{
+		font: 500 2rem Montserrat;
+		text-align: center;
+		position:absolute;
+		top: 30%;
+		left: 50%;
+		transform: translate(-50%, -70%);
+		color: black;
+	}
+	.n4{
+		background-image: url("../img/large/parallax_breakfast_large.webp");
+		height: 100vh;
+	}
+	#breakfast h3{
+		font: 700 6rem Montserrat;
+	}
+	#breakfast p{
+		font: 500 2rem Montserrat;
+		text-align: center;
+		position:absolute;
+		top: 70%;
+		left: 50%;
+		transform: translate(-50%, -70%);
+		color: white;
+	}
+	h3{
+		display: block;
+		text-align: center;
+		font: 800 7rem Montserrat;
+		text-transform: uppercase;
+		position:absolute;
+		top: 45%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color:white;
+		background-colo: transparent;
+		margin-bottom: 5%;
+	}
+	.relative{
+		position: relative;
+	}
+	#milkshake div:nth-child(1){order:2;}
+	.intLink:hover{background-color: black;}
+	.intLink:hover a{color: white;}
+	.intLink {padding: 2%;}
+	
+	/*----------------SEITE ÜBER UNS------------------*/
+	#unsIntro{height: 20vh;}
+	.bgW{background-color: white;}
+	.uns .wrapp80{
+		max-width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 0;
+		padding: 0;
+	}
+	.hb{
+		color:black;
+		margin-top:100px;
+	}
+	.uns h2{
+		margin: 0;
+		padding: 2%;
+		font: 600 4rem Montserrat;
+	}
+	
+	#pict_uns1{
+		display: block;
+		width: 100%;
+		height: 60vh;
+		object-fit: cover;
+		object-position: center;
+		margin-bottom: 2%;
+	}
+	.threecol{
+		display: flex;
+		justify-content:space-between;
+		align-content: center;
+		gap: 3%;
+		margin: 0 4%;
+	}
+	.threecol div{flex: 0 1 33.333%;}
+	.threecol span{font-size: 1.5rem;}
+	.threecol img, .threecol picture{display: none;}
+	.threecol div:nth-child(2), .threecol div:nth-child(4){display: none;}
+	.threecol div{margin: 0 5%;}
+	#warum .stdTxtB{
+		padding: 10% 0;
+	}
+	img{display: block;}
+	#wifi div:first-child{order:2;}
+	#betrieb{display: none;}
+	
+/*-------------Footer (nur ab 1281px)------------------*/
+	#cont-footer{padding: 5% 5% 1%;}
+
+
+/*-----------kontakt----------*/
+#bckgKontakt {
+        background-image: url('../img/large/kontakt_large_2.webp'); 
+ 	}
+	#kontakt{margin-left: 28%;}
+	#kontakt div:first-of-type {
+		text-align:left;
+		background-color: none;
+		padding: 0;
+		margin: 0;
+	}
+	.twoCol{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: nowrap;
+		gap: 4rem;
+	}
+	.twoCol div:first-child{flex: 0 1 40%;}
+	.twoCol div:last-child{flex: 0 1 60%;}
+	.wrapp70{
+		max-width: 70%;
+		margin: 6% auto;
+	}
+	.contact-form {
+		background-color: #ffffff;
+		padding: 20px 30px 100px;
+		margin: 0 10% 0 0;
+	}
+	#lightbox-content {
+		max-width: 800px;
+		margin: 5% auto;
+		max-height: 600px;
+		overflow-y: scroll; 
+    	overflow-x: hidden; 
+	}
+	#lightbox-content p, #lightbox-content strong {font-size: 1.3rem;}
+/*-----------------Impressum Seite---------------------*/
+	#impressum {
+	padding: 5% 10%;
+	max-width: 90%;
+}
+	#impr_h1{
+	font: 800 1.8rem Montserrat;
+	margin: 5% 0 2% ;
+}
+	#impressum h2{
+	font: 500 1.5rem Montserrat;
+	margin: 0;
+	margin-top: 2% ;
+}
+/*------------------Datenschuzt Seite-----------------------*/
+	#Datenschutz{max-width: 90%;}
+	#Datenschutz h1{font: 800 1.6rem Montserrat;}
+	#Datenschutz h2{font: 500 1.5rem Montserrat;}
+	#Datenschutz h3{font: 500 1.3rem Montserrat;}
+	#Datenschutz h4{font: 550 1.1rem Montserrat;}
+	#Datenschutz p{font: 400 1rem Montserrat;}
+/*-----------------EIS SEITE-----------------*/
+	/* section hero--------------*/
+	#eis section:first-of-type{margin-top: 70px;}
+	#eis .hero-image {
+	background-image: url("../img/large/eis_hero_large.webp");
+	}
+	
+	#eis h1{
+		font: 800 7rem Montserrat;
+		color:white;
+	}
+	
+	
+	#slogan::before {
+		content: "";  
+		display: block;
+		width: 10%; 
+		height: 5px; 
+		background-color: black; 
+		position: absolute;
+		top: 50%; 
+		transform: translateY(-50%); 
+		left: -10%; 
+	}
+	#slogan::after {
+		content: ""; 
+		display: block; 
+		width: 10%; 
+		height: 5px;
+		background-color: black;
+		position: absolute; 
+		top: 50%; 
+		transform: translateY(-50%); 
+		left: 100%; 
+	}
+/*sections products------------*/
+	.eisinfo h2{font-size: 7rem;}
+	#eis .eisinfo p {
+		display: block;
+		margin-top: 2%;}
+	#eis .txtWhite{
+		font: 400 1.5rem Montserrat;
+	}
+	#eis .txtB{
+		color:black;
+		font: 400 1.5rem Montserrat;
+	}
+	.eisinfo{
+		max-width: 30%;
+		top: 50%;
+		left: 15%;
+		transform: translate(-15% , -30%);
+	}
+/*-----------smoothie seite-----------*/
+	#smoothie section:first-of-type{margin-top: 70px;}
+	#smoothie .hero-image {
+	background-image: url("../img/large/smoothie_intro_large.webp");
+	}
+	#smoothie h1{
+		font: 800 7rem Montserrat;
+		color:white;
+	}
+	#slogan{
+		color: white;
+		margin-top:20%;
+	}
+	#slogan::before, #slogan::after {background-color: white; }
+/*sections products------------*/
+	.eisinfo h2{font-size: 7rem;}
+	#smoothie .eisinfo p {
+		display: block;
+		margin-top: 2%;}
+	#smoothie .txtWhite{
+		font: 400 1.5rem Montserrat;
+	}
+	#smoothie .txtB{
+		color:white;
+		font: 400 1.5rem Montserrat;
+	}
+	.eisinfo{
+		max-width: 30%;
+		top: 30%;
+		left: 15%;
+		transform: translate(-15% , -30%);
+	}
+	#multi{
+		background-color: rgba(0,0,0,0.60);
+		padding: 2% 4% 5%;
+		border-radius: 20px;
+	}
+	
+	/*-------------Snacks Seite----------------*/
+
+.introsnacks{
+	margin-top: 70px;
+}
+.introsnacks h1{
+	font-size: 4rem;
+}
+.lightbox-wrapper > div{background-color: rgba(0,0,0,0.50);}
+.lightbox-wrapper > div > img{
+	mix-blend-mode:luminosity;
+}
+.lightbox-wrapper > div > img:hover{
+	mix-blend-mode: normal;
+	background-color: transparent;
+}
+	
+.container{
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(6, 50vh);
+	gap: 2px;
+
+	grid-template-areas: 
+		" f3 		f21 		f24 		f22 		f22 "
+		" f9 		f17 		f14 		f22 		f22"
+		" f20 		f8 			f5 			f18 		f16"
+		" f7 		f2  		f10 		f25 		f16"
+		" f7 		f4 			f1 			f1 			f6"
+		" f23 		f12 		f1 			f1 			f15 "
+	
+}
+
+.f20{grid-area:f20;}
+.f3{grid-area: f3;}
+.f17{grid-area: f17;}
+.f21{grid-area: f21;}
+.f24{grid-area: f24;}
+.f9{grid-area: f9;}
+.f14{grid-area: f14;}
+.f22{grid-area: f22;}
+.f8{ grid-area: f8;}
+.f5{grid-area: f5;}
+.f23{grid-area: f23;}
+.f18{grid-area: f18;}
+.f6{grid-area: f6;}
+.f7{grid-area: f7; }
+.f1{grid-area: f1;}
+.f2{grid-area: f2;}
+.f4{grid-area: f4;}
+.f10{grid-area: f10;}
+.f25{grid-area: f25;}
+.f15{grid-area: f15;}
+.f12{grid-area: f12;}
+.f16{grid-area:f16;}
+
+}
+
