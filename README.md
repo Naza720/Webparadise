@@ -18,3 +18,6 @@ Der Fokus liegt auf einem responsiven Design, fortschrittlicher Interaktivität 
 
 ## Installation
 Repository klonen und auf einem lokalen Server starten. Kein CMS oder Preprozessor erforderlich.
+
+## Autor
+Entwickelt von Nazaret Arroyo Gomez.
