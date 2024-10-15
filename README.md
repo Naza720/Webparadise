@@ -20,4 +20,7 @@ Der Fokus liegt auf einem responsiven Design, fortschrittlicher Interaktivität 
 Repository klonen und auf einem lokalen Server starten. Kein CMS oder Preprozessor erforderlich.
 
 ## Autor
-Entwickelt von Nazaret Arroyo Gomez.
+Entwickelt von Nazaret Arroyo Gomez. 
+
+## Link zur Webseite
+[Paradise - Website für Natur-Eis und Smoothies](https://naza720.github.io/Webparadise/)
